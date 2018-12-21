@@ -7,13 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BracketsComponent } from './brackets.component';
+import { FormsModule } from '@angular/forms';
 var BracketsModule = /** @class */ (function () {
     function BracketsModule() {
     }
     BracketsModule = __decorate([
         NgModule({
             imports: [
-                CommonModule
+                CommonModule,
+                FormsModule
             ],
             declarations: [
                 BracketsComponent

@@ -34,3 +34,7 @@ td.corner {
 	border-top:solid;
     border-right:solid
 }
+select {
+    height: 33px;
+    width: 200px
+}

@@ -8,17 +8,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { Bracket } from './bracket';
-import { ITeam } from './team';
+import { BracketLogic } from './bracketLogic';
+import { Team } from './team';
 var BracketsComponent = /** @class */ (function () {
     function BracketsComponent() {
+    }
+    BracketsComponent.prototype.createBracket = function (teamsLength) {
+        //sets the teams array -- this code will be moved later
         var teams = [];
-        for (var i = 0; i < 8; i++) {
-            teams[i] = new ITeam;
+        //remember after move to ensure that teams cannot be less than 2
+        for (var i = 0; i < teamsLength; i++) {
+            teams[i] = new Team;
             teams[i].name = "Team" + (i + 1);
         }
-        this.bracket = new Bracket(teams);
-    }
+        this.bracket = new BracketLogic(teams);
+    };
     BracketsComponent.prototype.ngOnInit = function () {
     };
     BracketsComponent = __decorate([

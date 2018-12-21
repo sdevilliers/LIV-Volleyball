@@ -5,6 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 BrowserModule,
+                FormsModule,
                 RouterModule.forRoot([
                     { path: 'login', component: LoginComponent },
                     { path: '', redirectTo: 'login', pathMatch: 'full' },

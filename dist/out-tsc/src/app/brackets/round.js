@@ -1,43 +1,41 @@
 import { Match } from "./match";
 var Round = /** @class */ (function () {
     function Round(matchCount, gap, smallGap) {
+        if (gap === void 0) { gap = 0; }
+        if (smallGap === void 0) { smallGap = 0; }
         this.matches = []; //records the match locations by index value (each index value corresponds to 2 rows of the table)
-        this.currentIndex = 0; //tracks the current index throughout the generation process
         this.gap = gap;
         this.matchCount = matchCount;
         this.smallGap = smallGap;
-        this.generateRound();
+        this.matches = this.generateRound(gap, matchCount, smallGap);
     }
-    Round.prototype.generateRound = function () {
-        this.fillGap(this.smallGap);
+    Round.prototype.generateRound = function (gap, matchCount, smallGap) {
+        var matches = [];
+        var cellIndex = 0;
+        cellIndex += smallGap;
         var i;
-        for (i = 0; i < this.matchCount - 1; i++) {
-            this.matches[this.currentIndex] = new Match(false, i, this.currentIndex);
-            this.currentIndex++;
-            this.fillGap(this.gap);
+        //fills in matches separated by this round's gap width
+        for (i = 0; i < matchCount - 1; i++) {
+            //each match stores its position via the cellIndex
+            matches[i] = new Match(false, i, cellIndex);
+            cellIndex += 2;
+            cellIndex += gap;
         }
-        this.matches[this.currentIndex] = new Match(false, i, this.currentIndex);
-        this.fillGap(this.smallGap);
+        matches[i] = new Match(false, i, cellIndex);
+        cellIndex += smallGap;
+        return matches;
     };
-    Round.prototype.isNeat = function (length) {
-        var teamCount = length;
-        while (1 < teamCount) {
-            if (teamCount % 2 == 1) {
+    Round.prototype.isNeat = function () {
+        var matchCount = this.matches.length;
+        while (1 < matchCount) {
+            if (matchCount % 2 == 1) {
                 return false;
             }
             else {
-                teamCount = teamCount / 2;
+                matchCount = matchCount / 2;
             }
         }
         return true;
-    };
-    Round.prototype.fillGap = function (gapLength) {
-        if (gapLength > 0) {
-            this.currentIndex += gapLength - 1;
-        }
-        else if (gapLength < 0) {
-            console.log("round.fillgap() recieved a negative gap: " + gapLength);
-        }
     };
     return Round;
 }());
