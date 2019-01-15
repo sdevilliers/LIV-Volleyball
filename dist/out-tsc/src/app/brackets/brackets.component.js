@@ -12,12 +12,13 @@ import { BracketLogic } from './bracketLogic';
 import { Team } from './team';
 var BracketsComponent = /** @class */ (function () {
     function BracketsComponent() {
+        this.values = [4, 8, 10, 16, 24, 32, 64, 128, 256];
     }
-    BracketsComponent.prototype.createBracket = function (teamsLength) {
+    BracketsComponent.prototype.createBracket = function (selectedValue) {
         //sets the teams array -- this code will be moved later
         var teams = [];
         //remember after move to ensure that teams cannot be less than 2
-        for (var i = 0; i < teamsLength; i++) {
+        for (var i = 0; i < selectedValue; i++) {
             teams[i] = new Team;
             teams[i].name = "Team" + (i + 1);
         }

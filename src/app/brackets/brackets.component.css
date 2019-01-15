@@ -23,6 +23,7 @@ td.u {
 }
 td.blank {
     height: 10px;
+    border: 0;
 }
 td.top {
 	border-top:solid;

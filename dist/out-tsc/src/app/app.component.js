@@ -13,7 +13,7 @@ var AppComponent = /** @class */ (function () {
         Component({
             selector: 'vb-root',
             templateUrl: './app.component.html',
-            styleUrls: ['./app.component.css']
+            styleUrls: ['./app.component.css', '../assets/css/bootstrap.min.css']
         })
     ], AppComponent);
     return AppComponent;

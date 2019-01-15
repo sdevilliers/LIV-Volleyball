@@ -8,11 +8,11 @@ var BracketLogic = /** @class */ (function () {
         this.setVariables();
         //construct a neat or 'messy' bracket as required
         if (this.neat) {
+            //create a neat empty rounds array using the teams.length - extra teams
             this.rounds = this.generateNeat(this.roundCount, this.firstNeatMatchCount);
             this.setNeatMatches();
         }
         else {
-            //create a neat empty rounds array using the teams.length - extra teams
             this.rounds = this.generateNeat(this.roundCount - 1, this.firstNeatMatchCount);
             this.rounds = this.addRoundOne(this.rounds, this.extraMatches);
             this.setSeeds(this.rounds, this.neat, teams, this.extraMatches);
