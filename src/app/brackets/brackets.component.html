@@ -35,8 +35,7 @@
   <div class="row">
     <div class='col-sm'><strong>Teams:</strong></div>
     <div class="col-sm">
-      <input type='text' 
-          [(ngModel)] = 'teamCount' />
+      <input type='text' [(ngModel)]='teamCount' />
     </div>
     <div class="col-sm">
       <button class='btn btn-primary' (click)='createBracket(teamCount)'>
@@ -57,6 +56,10 @@
   <hr style="border:1px grey">
   <table class='table'>
     <tbody>
+      <!-- <tr *ngFor="let row of bracket.tableData; let y = index">
+        <td *ngFor="let cell of row; let x = index" [ngClass]="cell.class">
+          <span *ngIf="cell.class == 'n' || cell.class == 'u'">Team: <b>{{cell.teamName}}</b></span>
+        </td> -->
       <tr *ngFor="let row of bracket.tableData; let y = index">
         <td *ngFor="let cell of row; let x = index" [ngClass]="cell.class">
           <span *ngIf="cell.class == 'n' || cell.class == 'u'">Team: <b>{{cell.teamName}}</b></span>

@@ -9,6 +9,18 @@
         "name": "Team2",
         "players": {},
         "seed": "2",
-        "captain": "Captain1"
+        "captain": "Captain2"
+    },
+    {
+        "name": "Team3",
+        "players": {},
+        "seed": "3",
+        "captain": "Captain3"
+    },
+    {
+        "name": "Team4",
+        "players": {},
+        "seed": "4",
+        "captain": "Captain4"
     }
 ]

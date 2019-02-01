@@ -18,9 +18,9 @@ import { LoginComponent } from './home/login.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
-      { path: '',  redirectTo: 'login', pathMatch: 'full'},
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
+      { path: 'home', component: AppComponent },
+      { path: '',  redirectTo: 'home', pathMatch: 'full'},
+      { path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),
     BracketsModule
   ],
